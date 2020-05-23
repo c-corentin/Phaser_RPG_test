@@ -12,14 +12,12 @@ class GameScene extends Phaser.Scene {
 
         this.add.sprite(300, 100, 'button1'); //sprite can be animated, image not
 
-        this.chest = this.physics.add.image(300, 300, 'items', 0); //fourth argument select the frame (starts at 0)
+        this.chest = new Chest(this, 300, 300, 'items', 0); //fourth argument select the frame (starts at 0)
 
         this.wall = this.physics.add.image(500, 100, 'button1'); //creates new object with applied physic
         this.wall.setImmovable(); //won't make the object move even with applied physics 
 
-        this.player = this.physics.add.image(32, 32, 'characters', 0);
-        this.player.setScale(2); //sets y and x values if not specified sets both
-        this.player.body.setCollideWorldBounds(true); //makes the pklayer unable to exit the scene
+        this.player = new Player(this, 32, 32, 'characters', 0);
 
         this.physics.add.collider(this.player, this.wall); //Adds collision between said objects
         this.physics.add.overlap(this.player, this.chest, function (player, chest) {
