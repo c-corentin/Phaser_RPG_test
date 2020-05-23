@@ -2,12 +2,12 @@ let config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
-    scene: {
-        // init: init, initialize the scene once
-        preload: preload, //loads any assets or logic before rendering
-        create: create, //create game objects when the scene starts up, called once
-        update: update, // called once every frame
-    },
+    scene: [ //Phase will load the first scene but not the others
+        BootScene,
+        GameScene,
+        TitleScene,
+        UiScene,
+    ],
     physics: {
         default: 'arcade',
         arcade: {
@@ -20,6 +20,9 @@ let config = {
 };
 
 let game = new Phaser.Game(config);
+
+/* Moved out test lines to other files
+
 
 function preload() { //preload any existing assets with two arguments : name et file path
     this.load.image('button1', 'assets/images/ui/blue_button01.png'); //loads an image
@@ -77,3 +80,4 @@ function update() { //updates keyboard event listener
         this.player.setVelocityY(160);
     };
 };
+*/
