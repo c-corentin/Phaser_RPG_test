@@ -6,12 +6,6 @@ class GameScene extends Phaser.Scene {
     create() {
         let goldPickupSound = this.sound.add('gold_pickup'); //can add a second argument with different object properties 
 
-        let button = this.add.image(100, 100, 'button1'); // arguments : coordinates (0,0 is top left)
-
-        button.setOrigin(0.5, 0.5);
-
-        this.add.sprite(300, 100, 'button1'); //sprite can be animated, image not
-
         this.chest = new Chest(this, 300, 300, 'items', 0); //fourth argument select the frame (starts at 0)
 
         this.wall = this.physics.add.image(500, 100, 'button1'); //creates new object with applied physic
