@@ -35,5 +35,5 @@ class UiButton extends Phaser.GameObjects.Container {
       this.button.on('pointerout', () => {
         this.button.setTexture(this.key);
       });
-    }
-  }
+    };
+  };

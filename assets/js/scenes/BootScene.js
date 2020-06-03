@@ -4,10 +4,23 @@ class BootScene extends Phaser.Scene {
     };
 
     preload() {
+        // IMAGES
+        this.loadImages();
+        
+        // SPRITES
+        this.loadSprites();
+
+        // AUDIO
+        this.loadAudio();
+    };
+
+    loadImages() {
         this.load.image('button1', 'assets/images/ui/blue_button01.png'); //loads an image
         this.load.image('button2', 'assets/images/ui/blue_button02.png');
+    };
 
-        this.load.spritesheet('items', 'assets/images/items.png', {
+    loadSprites() {
+         this.load.spritesheet('items', 'assets/images/items.png', {
             frameWidth: 32,
             frameHeight: 32
         }); //third argument specifies size of sprite
@@ -16,7 +29,9 @@ class BootScene extends Phaser.Scene {
             frameWidth: 32,
             frameHeight: 32
         });
+    };
 
+    loadAudio() {
         this.load.audio('gold_pickup', ['assets/audio/Pickup.wav']); //selects an array of audio to be played (if browser does not support)
     };
 
