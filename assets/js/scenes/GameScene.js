@@ -26,7 +26,7 @@ class GameScene extends Phaser.Scene {
     };
 
     createPlayer() {
-        this.player = new Player(this, 32, 32, 'characters', 0);
+        this.player = new Player(this, 64, 64, 'characters', 1);
     };
 
     createChests() {

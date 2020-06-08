@@ -6,7 +6,7 @@ class BootScene extends Phaser.Scene {
     preload() {
         // IMAGES
         this.loadImages();
-        
+
         // SPRITES
         this.loadSprites();
 
@@ -25,9 +25,9 @@ class BootScene extends Phaser.Scene {
             frameHeight: 32
         }); //third argument specifies size of sprite
 
-        this.load.spritesheet('characters', 'assets/images/characters.png', {
-            frameWidth: 32,
-            frameHeight: 32
+        this.load.spritesheet('characters', 'assets/images/female_archer.png', {
+            frameWidth: 64,
+            frameHeight: 64
         });
     };
 
@@ -36,6 +36,6 @@ class BootScene extends Phaser.Scene {
     };
 
     create(){
-        this.scene.start('Title');
+        this.scene.start('Game');
     };
 };
