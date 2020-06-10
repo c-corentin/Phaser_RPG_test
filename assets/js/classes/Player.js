@@ -13,11 +13,11 @@ class Player extends Phaser.Physics.Arcade.Image {
 
         this.scene.add.existing(this); //adds the player to an existing scene
 
-    };
+    }
 
     create() {
 
-    };
+    }
 
     update(cursors) { //updates keyboard event listener and link to cursors game object with the parameter
         this.body.setVelocity(0); //sets initial velocity for the player (body since we're in player class)
@@ -32,6 +32,6 @@ class Player extends Phaser.Physics.Arcade.Image {
             this.body.setVelocityY(-this.Velocity);
         } else if (cursors.down.isDown) {
             this.body.setVelocityY(this.Velocity);
-        };
-    };
-};
+        }
+    }
+}
