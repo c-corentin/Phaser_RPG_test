@@ -25,9 +25,9 @@ class BootScene extends Phaser.Scene {
             frameHeight: 32
         }); //third argument specifies size of sprite
 
-        this.load.spritesheet('characters', 'assets/images/female_archer.png', {
-            frameWidth: 64,
-            frameHeight: 64
+        this.load.spritesheet('characters', 'assets/images/characters.png', {
+            frameWidth: 32,
+            frameHeight: 32
         });
     };
 
