@@ -13,5 +13,24 @@ class GameManager {
 
     setup() {
         this.parseMapData();
+        this.setupEventListeners();
+        this.setupSpawners();
+        this.spawnPlayer();
+    }
+
+    parseMapData() {
+
+    }
+
+    setupEventListeners() {
+
+    }
+
+    setupSpawners() {
+
+    }
+
+    spawnPlayer() {
+        
     }
 }
