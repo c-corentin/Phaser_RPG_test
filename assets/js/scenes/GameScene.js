@@ -88,6 +88,7 @@ class GameScene extends Phaser.Scene {
   }
 
   createGameManager() {
-    
+    this.gameManager = new GameManager(scene, this.map.map.objects);
+    this.setup();
   }
 }
