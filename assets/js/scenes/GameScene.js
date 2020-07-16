@@ -15,6 +15,7 @@ class GameScene extends Phaser.Scene {
     this.createPlayer();
     this.addCollisions();
     this.createInput();
+    this.createGameManager();
   }
 
   update() {
@@ -84,5 +85,9 @@ class GameScene extends Phaser.Scene {
   createMap() {
     // create new map from the Map class
     this.map = new Map(this, 'map', 'background', 'background', 'blocked');
+  }
+
+  createGameManager() {
+    
   }
 }
