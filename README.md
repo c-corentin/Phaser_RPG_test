@@ -12,5 +12,8 @@ To do :
 * Segment Code with classes
     * Player
     * Items
+    * GameManager
+     * Spawner
+     * ChestModel
     
 [1]: https://c-corentin.github.io/Phaser_RPG_test/
