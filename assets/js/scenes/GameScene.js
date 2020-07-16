@@ -17,7 +17,7 @@ class GameScene extends Phaser.Scene {
   }
 
   update() {
-    if (this.player) player.update(this.cursors);
+    if (this.player) this.player.update(this.cursors);
   }
 
   createAudio() {
