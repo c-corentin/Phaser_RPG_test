@@ -94,5 +94,9 @@ class GameScene extends Phaser.Scene {
     this.backgroundLayer.setScale(2);
     this.blockedLayer.setScale(2);
 
+    // set world bounds on map instead of view
+    this.physics.world.bounds.width = this.map.widthInPixles * 2;
+    this.physics.world.bounds.height = this.map.heightInPixles * 2;
+
   }
 }
