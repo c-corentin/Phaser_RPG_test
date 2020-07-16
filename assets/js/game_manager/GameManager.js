@@ -5,9 +5,13 @@ class GameManager {
 
         this.spawners = {};
         this.chests = {};
-        
+
         this.playerLocations = [];
         this.chestLocations = {};
         this.monsterLocations = {};
+    }
+
+    setup() {
+        this.parseMapData();
     }
 }
