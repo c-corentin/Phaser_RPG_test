@@ -13,4 +13,4 @@ To do :
     * Player
     * Items
     
-[1]: http://www.phaser-rpg-test.com/
+[1]: https://c-corentin.github.io/Phaser_RPG_test/
