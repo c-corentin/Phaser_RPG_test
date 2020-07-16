@@ -1,12 +1,16 @@
 # Phaser_RPG_test
  First HTML5/Phaser RPG game test
+ 
+ Game available [here][1]
 
 To do :
-1Scenes
-    1Boot
-    1Title
-    1Game
-    1UI
-1Segment Code with classes
-    1Player
-    1Items
+* Scenes
+    * Boot
+    * Title
+    * Game
+    * UI
+* Segment Code with classes
+    * Player
+    * Items
+    
+[1]: https://c-corentin.github.io/Phaser_RPG_test/
