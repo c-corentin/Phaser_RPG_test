@@ -1,53 +1,32 @@
 class BootScene extends Phaser.Scene {
-    constructor() {
-        super('Boot');
-    }
+  constructor() {
+    super('Boot');
+  }
 
-    preload() {
-        // IMAGES
-        this.loadImages();
+  preload() {
+    // load images
+    this.loadImages();
+    // load spritesheets
+    this.loadSpriteSheets();
+    // load audio
+    this.loadAudio();
+  }
 
-        // SPRITES
-        this.loadSprites();
+  loadImages() {
+    this.load.image('button1', 'assets/images/ui/blue_button01.png');
+    this.load.image('button2', 'assets/images/ui/blue_button02.png');
+  }
 
-        // AUDIO
-        this.loadAudio();
+  loadSpriteSheets() {
+    this.load.spritesheet('items', 'assets/images/items.png', { frameWidth: 32, frameHeight: 32 });
+    this.load.spritesheet('characters', 'assets/images/characters.png', { frameWidth: 32, frameHeight: 32 });
+  }
 
-        // TILEMAP
-        this.loadTileMap();
-    }
+  loadAudio() {
+    this.load.audio('goldSound', ['assets/audio/Pickup.wav']);
+  }
 
-    loadImages() {
-        this.load.image('button1', 'assets/images/ui/blue_button01.png'); //loads an image
-        this.load.image('button2', 'assets/images/ui/blue_button02.png');
-        
-        //load the map tileset image
-        this.load.image('background', 'assets/level/background-extruded.png')
-
-    }
-
-    loadSprites() {
-         this.load.spritesheet('items', 'assets/images/items.png', {
-            frameWidth: 32,
-            frameHeight: 32
-        }) //third argument specifies size of sprite
-
-        this.load.spritesheet('characters', 'assets/images/characters.png', {
-            frameWidth: 32,
-            frameHeight: 32
-        })
-    }
-
-    loadAudio() {
-        this.load.audio('gold_pickup', ['assets/audio/Pickup.wav']); //selects an array of audio to be played (if browser does not support)
-    }
-
-    loadTileMap() {
-        // load JSON file map
-        this.load.tilemapTiledJSON('map', 'assets/level/large_level.json');
-    }
-
-    create(){
-        this.scene.start('Game');
-    }
+  create() {
+    this.scene.start('Title');
+  }
 }

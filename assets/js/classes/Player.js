@@ -1,37 +1,34 @@
 class Player extends Phaser.Physics.Arcade.Image {
-    constructor(scene, x, y, key, frame) {
-        super(scene, x, y, key, frame);
+  constructor(scene, x, y, key, frame) {
+    super(scene, x, y, key, frame);
+    this.scene = scene; // the scene this container will be added to
+    this.velocity = 160; // the velocity when moving our player
 
-        this.scene = scene;
-        this.Velocity = 160; //velocity with which the player is moving
+    // enable physics
+    this.scene.physics.world.enable(this);
+    // set immovable if another object collides with our player
+    this.setImmovable(false);
+    // scale our player
+    this.setScale(2);
+    // collide with world bounds
+    this.setCollideWorldBounds(true);
+    // add the player to our existing scene
+    this.scene.add.existing(this);
+  }
 
-        this.scene.physics.world.enable(this); //enables physics
-        this.setImmovable(false); //sets immovable if an object collides w/ the player
+  update(cursors) {
+    this.body.setVelocity(0);
 
-        //this.setScale(2); //sets y and x values if not specified sets both
-        this.setCollideWorldBounds(true); //makes the pklayer unable to exit the scene
-
-        this.scene.add.existing(this); //adds the player to an existing scene
-
+    if (cursors.left.isDown) {
+      this.body.setVelocityX(-this.velocity);
+    } else if (cursors.right.isDown) {
+      this.body.setVelocityX(this.velocity);
     }
 
-    create() {
-
+    if (cursors.up.isDown) {
+      this.body.setVelocityY(-this.velocity);
+    } else if (cursors.down.isDown) {
+      this.body.setVelocityY(this.velocity);
     }
-
-    update(cursors) { //updates keyboard event listener and link to cursors game object with the parameter
-        this.body.setVelocity(0); //sets initial velocity for the player (body since we're in player class)
-
-        if (cursors.left.isDown) {
-            this.body.setVelocityX(-this.Velocity); //Sets object velocity to move it along x and y axes
-        } else if (cursors.right.isDown) {
-            this.body.setVelocityX(this.Velocity);
-        };
-
-        if (cursors.up.isDown) {
-            this.body.setVelocityY(-this.Velocity);
-        } else if (cursors.down.isDown) {
-            this.body.setVelocityY(this.Velocity);
-        }
-    }
+  }
 }
