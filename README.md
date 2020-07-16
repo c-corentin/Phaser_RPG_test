@@ -10,8 +10,6 @@ To do :
     * Game
     * UI
 * Segment Code with classes
-    * Player
-    * Items
     * GameManager
      * Spawner
      * ChestModel
