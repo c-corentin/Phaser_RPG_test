@@ -22,7 +22,7 @@ class BootScene extends Phaser.Scene {
         this.load.image('button2', 'assets/images/ui/blue_button02.png');
         
         //load the map tileset image
-        this.load.image('background', 'assets/level/sheet2blocks.png')
+        this.load.image('background', 'assets/level/background-extruded.png')
 
     }
 
@@ -44,7 +44,7 @@ class BootScene extends Phaser.Scene {
 
     loadTileMap() {
         // load JSON file map
-        this.load.tilemapTiledJSON('map', 'assets/level/mapmaison.json');
+        this.load.tilemapTiledJSON('map', 'assets/level/large_level.json');
     }
 
     create(){
