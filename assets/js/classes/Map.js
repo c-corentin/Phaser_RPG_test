@@ -5,7 +5,7 @@ class Map {
         this.tileSetName = tileSetName;
         this.bgLayerName = bgLayerName;
         this.blockedLayerName = blockedLayerName;
-        
+
         this.createMap();
     }
 
@@ -28,10 +28,10 @@ class Map {
         this.blockedLayer.setScale(2);
     
         // set world bounds on map instead of view
-        this.scene.physics.world.bounds.width = this.map.widthInPixles * 2;
-        this.scene.physics.world.bounds.height = this.map.heightInPixles * 2;
+        this.scene.physics.world.bounds.width = this.map.widthInPixels * 2;
+        this.scene.physics.world.bounds.height = this.map.heightInPixels * 2;
     
         // set the camera inside the map
-        this.scene.cameras.main.setBounds(0, 0, this.map.widthInPixles * 2, this.map.heightInPixles * 2);
+        this.scene.cameras.main.setBounds(0, 0, this.map.widthInPixels * 2, this.map.heightInPixels * 2);
     }
 }
