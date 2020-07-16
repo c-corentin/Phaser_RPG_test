@@ -1,21 +1,25 @@
 class Map {
-    constructor(scene){
+    constructor(scene, key, tileSetName, bgLayerName, blockedLayerName){
         this.scene = scene;
+        this.key = key;
+        this.tileSetName = tileSetName;
+        this.bgLayerName = bgLayerName;
+        this.blockedLayerName = blockedLayerName;
         this.createMap();
     }
 
     createMap() {
         // create the tile map
-        this.map = this.scene.make.tilemap({ key: 'map' });
-        
+        this.map = this.scene.make.tilemap({ key: this.key });
+
         // add the tileset image to our map
-        this.tiles = this.map.addTilesetImage('background', 'background', 32, 32, 1, 2);
-        
+        this.tiles = this.map.addTilesetImage(this.tileSetName, this.tileSetName, 32, 32, 1, 2);
+
         // create our background
-        this.backgroundLayer = this.map.createStaticLayer('background', this.tiles, 0, 0);
-        
+        this.backgroundLayer = this.map.createStaticLayer(this.bgLayerName, this.tiles, 0, 0);
+
         // create blocked layer
-        this.blockedLayer = this.map.createStaticLayer('blocked', this.tiles, 0, 0);
+        this.blockedLayer = this.map.createStaticLayer(this.blockedLayerName, this.tiles, 0, 0);
         this.blockedLayer.setCollisionByExclusion([-1]);
     
         // set scale to match the player's 

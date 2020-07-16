@@ -80,4 +80,9 @@ class GameScene extends Phaser.Scene {
     // spawn a new chest
     this.time.delayedCall(1000, this.spawnChest, [], this);
   }
+
+  createMap() {
+    // create new map from the Map class
+    this.map = New Map(this, 'map', 'background', 'background', 'blocked');
+  }
 }
