@@ -57,6 +57,7 @@ class GameManager {
     }
 
     spawnPlayer() {
-
+        const location = this.playerLocations[Math.floor(Math.random() * this.playerLocations.length)];
+        this.scene.events.emit('spawnPlayer', location);
     }
 }
