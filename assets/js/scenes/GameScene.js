@@ -62,8 +62,8 @@ class GameScene extends Phaser.Scene {
   }
 
   addCollisions() {
-    // check for collisions between player and wall objects
-    this.physics.add.collider(this.player, this.wall);
+    // check for collisions between player and the tile blocked layer
+    this.physics.add.collider(this.player, this.blockedLayer);
     // check for overlaps between player and chest game objects
     this.physics.add.overlap(this.player, this.chests, this.collectChest, null, this);
   }
@@ -90,6 +90,8 @@ class GameScene extends Phaser.Scene {
     this.backgroundLayer = this.map.createStaticLayer('background', this.tiles, 0, 0);
     // create blocked layer
     this.blockedLayer = this.map.createStaticLayer('blocked', this.tiles, 0, 0);
+    this.blockedLayer.setCollisionByExclusion([-1]);
+
     // set scale to match the player's 
     this.backgroundLayer.setScale(2);
     this.blockedLayer.setScale(2);
