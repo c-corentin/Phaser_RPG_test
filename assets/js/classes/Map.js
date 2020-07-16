@@ -5,6 +5,7 @@ class Map {
         this.tileSetName = tileSetName;
         this.bgLayerName = bgLayerName;
         this.blockedLayerName = blockedLayerName;
+        
         this.createMap();
     }
 
