@@ -83,6 +83,6 @@ class GameScene extends Phaser.Scene {
 
   createMap() {
     // create new map from the Map class
-    this.map = New Map(this, 'map', 'background', 'background', 'blocked');
+    this.map = new Map(this, 'map', 'background', 'background', 'blocked');
   }
 }
