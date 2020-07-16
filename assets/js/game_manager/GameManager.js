@@ -19,7 +19,21 @@ class GameManager {
     }
 
     parseMapData() {
+        this.mapData.forEach((layer) => {
+            if (layer.name === 'player_locations') {
+                layer.objects.forEach((obj) => {
+                    this.playerLocations.push([obj.x, obj.y]);
+                });
+            }
+            else if (layer.name === 'chest_locations') {
+                layer.objects.forEach((obj) => {
+                    this.playerLocations.push([obj.x, obj.y]);
+                });
+            }
+            else if (layer.name === 'monster_locations') {
 
+            }
+        })
     }
 
     setupEventListeners() {
@@ -31,6 +45,6 @@ class GameManager {
     }
 
     spawnPlayer() {
-        
+
     }
 }
