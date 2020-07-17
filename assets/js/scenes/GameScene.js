@@ -22,7 +22,10 @@ class GameScene extends Phaser.Scene {
   }
 
   createAudio() {
-    this.goldPickupAudio = this.sound.add('goldSound', { loop: false, volume: 0.2 });
+    this.goldPickupAudio = this.sound.add('goldSound', {
+      loop: false,
+      volume: 0.2
+    });
   }
 
   createPlayer(location) {
@@ -41,12 +44,12 @@ class GameScene extends Phaser.Scene {
       // add chest to chests group
       this.chests.add(chest);
     } else {
-      chest.coins = chestObject.gold;  // pass the amount of gold
-      chest.id = chestObject.id;       // pass the chest id
+      chest.coins = chestObject.gold; // pass the amount of gold
+      chest.id = chestObject.id; // pass the chest id
       chest.setPosition(chestObject.x * 2, chestObject.y * 2);
       chest.makeActive();
     }
-}
+  }
 
   createInput() {
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -68,10 +71,10 @@ class GameScene extends Phaser.Scene {
     this.events.emit('updateScore', this.score);
     // make chest game object inactive
     chest.makeInactive();
-    
+
     this.events.emit('pickUpChest', chest.id);
 
-}
+  }
 
   createMap() {
     // create new map from the Map class

@@ -52,8 +52,8 @@ class GameManager {
         this.scene.events.on('pickUpChest', (chestId) => {
             // update the spawner
             if (this.chests[chestId]) {
-              // removing the chest
-              this.spawners[this.chests[chestId].spawnerId].removeObject(chestId);
+                // removing the chest
+                this.spawners[this.chests[chestId].spawnerId].removeObject(chestId);
             }
         });
     }
@@ -87,5 +87,5 @@ class GameManager {
 
     deleteChest(chestId) {
         delete this.chests[chestId];
-      }
+    }
 }

@@ -11,7 +11,7 @@ class BootScene extends Phaser.Scene {
     // load audio
     this.loadAudio();
     // load tilemap
-    this.loadTileMap(); 
+    this.loadTileMap();
   }
 
   loadImages() {
@@ -21,8 +21,14 @@ class BootScene extends Phaser.Scene {
   }
 
   loadSpriteSheets() {
-    this.load.spritesheet('items', 'assets/images/items.png', { frameWidth: 32, frameHeight: 32 });
-    this.load.spritesheet('characters', 'assets/images/characters.png', { frameWidth: 32, frameHeight: 32 });
+    this.load.spritesheet('items', 'assets/images/items.png', {
+      frameWidth: 32,
+      frameHeight: 32
+    });
+    this.load.spritesheet('characters', 'assets/images/characters.png', {
+      frameWidth: 32,
+      frameHeight: 32
+    });
   }
 
   loadAudio() {
@@ -30,8 +36,8 @@ class BootScene extends Phaser.Scene {
   }
 
   loadTileMap() {
-      // map made with Tiled in JSON format
-  this.load.tilemapTiledJSON('map', 'assets/level/large_level.json');
+    // map made with Tiled in JSON format
+    this.load.tilemapTiledJSON('map', 'assets/level/large_level.json');
   }
 
   create() {

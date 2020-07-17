@@ -11,7 +11,7 @@ class Chest extends Phaser.Physics.Arcade.Image {
     this.scene.add.existing(this);
     // scale the chest game object
     this.setScale(2);
-}
+  }
 
   makeActive() {
     this.setActive(true);
