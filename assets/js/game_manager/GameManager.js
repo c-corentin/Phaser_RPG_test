@@ -53,10 +53,19 @@ class GameManager {
     }
 
     setupSpawners() {
-
+        // Create chest spawners
+        Object.keys(this.chestLocations).forEach((key) => {
+            const config = {
+                spawnInterval: 3000,
+                limit: 3,
+                spawnerType: 'CHEST',
+                id: `chest-${key}`
+            }
+        });
     }
 
     spawnPlayer() {
+        // Create random player spawn points
         const location = this.playerLocations[Math.floor(Math.random() * this.playerLocations.length)];
         this.scene.events.emit('spawnPlayer', location);
     }
