@@ -61,6 +61,8 @@ class GameManager {
                 spawnerType: 'CHEST',
                 id: `chest-${key}`
             }
+
+            const spawner = new Spawner(config, this.chestLocations[key], this.addChest.bind(this), this.deleteChest.bind(this));
         });
     }
 
