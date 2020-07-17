@@ -76,6 +76,7 @@ class GameManager {
 
     addChest(id, chest) {
         this.chests[id] = chest;
+        
     }
 
     deleteChest() {

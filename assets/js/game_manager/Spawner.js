@@ -3,7 +3,7 @@ class Spawner {
         this.id = config.id;
         this.spawnInterval = config.spawnInterval;
         this.limit = config.limit;
-        this.objectType = config.objectType;
+        this.objectType = config.spawnerType;
 
         this.spawnLocations = spawnLocations;
         this.addObject = addObject;
