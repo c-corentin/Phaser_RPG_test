@@ -63,6 +63,8 @@ class GameManager {
             }
 
             const spawner = new Spawner(config, this.chestLocations[key], this.addChest.bind(this), this.deleteChest.bind(this));
+
+            this.spawners[spawner.id] = spawner;
         });
     }
 
@@ -70,5 +72,13 @@ class GameManager {
         // Create random player spawn points
         const location = this.playerLocations[Math.floor(Math.random() * this.playerLocations.length)];
         this.scene.events.emit('spawnPlayer', location);
+    }
+
+    addChest() {
+
+    }
+
+    deleteChest() {
+        
     }
 }
