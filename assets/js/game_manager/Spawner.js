@@ -32,11 +32,21 @@ class Spawner {
         const location = this.randomLocation();
         const chest = new ChestModel(location[0], location[1], 10, this.id);
 
-        this.addObject();
+        this.objectCreated.push(chest);
+        this.addObject(chest.id, chest);
     }
 
     randomLocation() {
+        const location = this.spawnLocations[Math.floor(Math.random() * this.spawnLocations.length)];
+        const invalidLocation = this.objectCreated.some((obj) => {
+            if (obj.x === location[0] && obj.y === location[1]) {
+                return true;
+            }
+            return false;
+        });
 
+        if (invalidLocation) return this.randomLocation;
+        return location;
     }
 
     removeObject() {
