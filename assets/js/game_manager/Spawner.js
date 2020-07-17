@@ -30,7 +30,7 @@ class Spawner {
 
     spawnChest() {
         const location = this.randomLocation();
-        const chest = new ChestModel(location[0], location[1], randomNumber(), this.id);
+        const chest = new ChestModel(location[0], location[1], randomNumber(8,8), this.id);
 
         this.objectCreated.push(chest);
         this.addObject(chest.id, chest);
