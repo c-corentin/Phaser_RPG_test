@@ -58,7 +58,7 @@ class GameManager {
             const config = {
                 spawnInterval: 3000,
                 limit: 3,
-                spawnerType: 'CHEST',
+                spawnerType: SpawnerType.CHEST,
                 id: `chest-${key}`
             }
 
