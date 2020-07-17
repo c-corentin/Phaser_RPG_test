@@ -23,11 +23,16 @@ class Spawner {
     }
 
     spawnObject() {
-
+        if (this.objectType === 'CHEST') {
+            this.spawnChest();
+        }
     }
 
     spawnChest() {
+        const location = this.randomLocation();
+        const chest = new ChestModel();
 
+        this.addObject();
     }
 
     randomLocation() {
@@ -35,6 +40,6 @@ class Spawner {
     }
 
     removeObject() {
-        
+
     }
 }
