@@ -38,7 +38,7 @@ class GameScene extends Phaser.Scene {
     // spawn a chest
     for (let i = 0; i < this.maxNumberOfChests; i += 1) {
       this.spawnChest();
-    } 
+    }
   }
 
   spawnChest() {
