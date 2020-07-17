@@ -86,6 +86,6 @@ class GameManager {
     }
 
     deleteChest(chestId) {
-        delete this.chests(chestId);
-    }
+        delete this.chests[chestId];
+      }
 }
