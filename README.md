@@ -3,15 +3,27 @@
  
  Game available [here][1]
 
-To do :
-* Scenes
-    * Boot
-    * Title
-    * Game
-    * UI
-* Segment Code with classes
-    * GameManager
-     * Spawner
-     * ChestModel
+## To do :
+* Monster spawn
+* Monster model class
+* Player container
+* Player weapon
+* Attack function
+* Health bars
+* Death
+* Respawn
+* Monster movements 
+* Hotfix & details
+
+## Done :
+* Object display
+* Player spawn
+* Player movements
+* Map display
+* Walls & objects collisions
+* Chests collection
+* Chest gold & score update
+* Random player spawn
+* Random chest spawn
     
 [1]: https://c-corentin.github.io/Phaser_RPG_test/
