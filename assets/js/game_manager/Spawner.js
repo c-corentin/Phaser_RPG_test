@@ -16,7 +16,7 @@ class Spawner {
 
     start() {
         this.interval = setInterval(() => {
-            if (this.objectsCreated.length < this.limit) {
+            if (this.objectsCreated < this.limit) {
                 this.spawnObject();
             }
         }, this.spawnInterval);
