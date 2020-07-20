@@ -71,10 +71,10 @@ class GameScene extends Phaser.Scene {
     this.events.emit('updateScore', this.score);
     // make chest game object inactive
     chest.makeInactive();
-
+    
     this.events.emit('pickUpChest', chest.id);
 
-  }
+}
 
   createMap() {
     // create new map from the Map class

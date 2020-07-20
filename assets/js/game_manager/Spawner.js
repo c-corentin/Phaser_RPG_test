@@ -9,14 +9,14 @@ class Spawner {
         this.addObject = addObject;
         this.deleteObject = deleteObject;
 
-        this.objectCreated = [];
+        this.objectsCreated = [];
 
         this.start();
     }
 
     start() {
         this.interval = setInterval(() => {
-            if (this.objectCreated.length < this.limit) {
+            if (this.objectsCreated.length < this.limit) {
                 this.spawnObject();
             }
         }, this.spawnInterval);
@@ -32,13 +32,13 @@ class Spawner {
         const location = this.randomLocation();
         const chest = new ChestModel(location[0], location[1], randomNumber(8, 8), this.id);
 
-        this.objectCreated.push(chest);
+        this.objectsCreated.push(chest);
         this.addObject(chest.id, chest);
     }
 
     randomLocation() {
         const location = this.spawnLocations[Math.floor(Math.random() * this.spawnLocations.length)];
-        const invalidLocation = this.objectCreated.some((obj) => {
+        const invalidLocation = this.objectsCreated.some((obj) => {
             if (obj.x === location[0] && obj.y === location[1]) {
                 return true;
             }
@@ -50,7 +50,7 @@ class Spawner {
     }
 
     removeObject(id) {
-        this.objectCreated = this.objectCreated.filter(obj => obj.id != id);
+        this.objectsCreated = this.objectsCreated.filter(obj => obj.id != id);
         this.deleteObject(id);
     }
 }

@@ -13,7 +13,7 @@ class GameManager {
 
     setup() {
         this.parseMapData();
-        this.setupEventListeners();
+        this.setupEventListener();
         this.setupSpawners();
         this.spawnPlayer();
     }
@@ -48,13 +48,13 @@ class GameManager {
         });
     }
 
-    setupEventListeners() {
+    setupEventListener() {
         this.scene.events.on('pickUpChest', (chestId) => {
-            // update the spawner
-            if (this.chests[chestId]) {
-                // removing the chest
-                this.spawners[this.chests[chestId].spawnerId].removeObject(chestId);
-            }
+          // update the spawner
+          if (this.chests[chestId]) {
+            // removing the chest
+            this.spawners[this.chests[chestId].spawnerId].removeObject(chestId);
+          }
         });
     }
 
