@@ -5,5 +5,9 @@ class MonsterModel {
       this.x = x;
       this.y = y;
       this.gold = gold;
+      this.frame = frame;
+      this.health = health;
+      this.maxHealth = health;
+      this.attack = attack;
     }
   }
