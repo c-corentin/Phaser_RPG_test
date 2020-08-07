@@ -110,4 +110,13 @@ class GameManager {
     deleteChest(chestId) {
         delete this.chests[chestId];
     }
+
+    addMonster(monsterId, monster) {
+        this.monsters[monsterId] = monster;
+        this.scene.events.emit('monsterSpawned', monster);
+    }
+
+    deleteMonster(monsterId) {
+        delete this.monsters[monsterId];
+    }
 }
