@@ -51,6 +51,10 @@ class GameScene extends Phaser.Scene {
     }
   }
 
+  spawnMonster(monster) {
+    // WIP
+  }
+
   createInput() {
     this.cursors = this.input.keyboard.createCursorKeys();
   }
