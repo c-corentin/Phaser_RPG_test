@@ -59,14 +59,18 @@ class GameManager {
     }
 
     setupSpawners() {
+        const config = {
+            spawnInterval: 3000,
+            limit: 3,
+            spawnerType: SpawnerType.CHEST,
+            id: '',
+        };
+
         // Create chest spawners
         Object.keys(this.chestLocations).forEach((key) => {
-            const config = {
-                spawnInterval: 3000,
-                limit: 3,
-                spawnerType: SpawnerType.CHEST,
-                id: `chest-${key}`
-            }
+            
+            config.id = `chest-${key}`;
+
 
             const spawner = new Spawner(config,
                 this.chestLocations[key],
@@ -79,12 +83,8 @@ class GameManager {
 
         // Create monster spawners
         Object.keys(this.monsterLocations).forEach((key) => {
-            const config = {
-                spawnInterval: 3000,
-                limit: 3,
-                spawnerType: SpawnerType.MONSTER,
-                id: `monster-${key}`
-            }
+            
+            config.id = `monster-${key}`;
 
             const spawner = new Spawner(config,
                 this.monsterLocations[key],
