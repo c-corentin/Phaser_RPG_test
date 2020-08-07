@@ -29,6 +29,10 @@ class BootScene extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32
     });
+    this.load.spritesheet('monsters', 'assets/images/monsters.png', {
+      frameWidth: 32,
+      frameHeight: 32
+    });
   }
 
   loadAudio() {
