@@ -57,6 +57,14 @@ class GameManager {
                 this.spawners[this.chests[chestId].spawnerId].removeObject(chestId);
             }
         });
+
+        this.scene.events.on('destroyedEnemy', (monsterId) => {
+            // update the spawner
+            if (this.monsters[monsterId]) {
+                // removing the chest
+                this.spawners[this.monsters[monsterId].spawnerId].removeObject(monsterId);
+            }
+        });
     }
 
     setupSpawners() {
