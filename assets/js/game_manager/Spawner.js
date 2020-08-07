@@ -40,7 +40,14 @@ class Spawner {
 
     spawnMonster() {
         const location = this.randomLocation();
-        const monster = new MonsterModel(location[0], location[1], randomNumber(8, 8), this.id);
+        const monster = new MonsterModel(location[0],
+        location[1],
+        randomNumber(8, 8),
+        this.id,
+        randomNumber(0, 20), // selects the monster model from the sprite sheet
+        randomNumber(3,5), // health points
+        1, // monster attack value
+        );
 
         this.objectsCreated.push(monster);
         this.addObject(monster.id, monster);
