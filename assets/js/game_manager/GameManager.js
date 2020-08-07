@@ -5,6 +5,7 @@ class GameManager {
 
         this.spawners = {};
         this.chests = {};
+        this.monsters = {};
 
         this.playerLocations = [];
         this.chestLocations = {};
