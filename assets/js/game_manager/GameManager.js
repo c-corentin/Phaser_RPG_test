@@ -66,13 +66,15 @@ class GameManager {
             id: '',
         };
 
+        let spawner;
+
         // Create chest spawners
         Object.keys(this.chestLocations).forEach((key) => {
             
             config.id = `chest-${key}`;
 
 
-            const spawner = new Spawner(config,
+            spawner = new Spawner(config,
                 this.chestLocations[key],
                 this.addChest.bind(this),
                 this.deleteChest.bind(this)
@@ -83,10 +85,11 @@ class GameManager {
 
         // Create monster spawners
         Object.keys(this.monsterLocations).forEach((key) => {
-            
-            config.id = `monster-${key}`;
 
-            const spawner = new Spawner(config,
+            config.id = `monster-${key}`;
+            config.spawnerType = SpawnerType.MONSTER;
+
+            spawner = new Spawner(config,
                 this.monsterLocations[key],
                 this.addMonster.bind(this),
                 this.deleteMonster.bind(this)
