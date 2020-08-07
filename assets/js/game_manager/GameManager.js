@@ -77,7 +77,7 @@ class GameManager {
             this.spawners[spawner.id] = spawner;
         });
 
-        // Create monsyer spawners
+        // Create monster spawners
         Object.keys(this.monsterLocations).forEach((key) => {
             const config = {
                 spawnInterval: 3000,
@@ -88,8 +88,8 @@ class GameManager {
 
             const spawner = new Spawner(config,
                 this.monsterLocations[key],
-                this.addChest.bind(this),
-                this.deleteChest.bind(this)
+                this.addMonster.bind(this),
+                this.deleteMonster.bind(this)
             );
 
             this.spawners[spawner.id] = spawner;
