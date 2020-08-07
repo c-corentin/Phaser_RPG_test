@@ -25,6 +25,8 @@ class Spawner {
     spawnObject() {
         if (this.objectType === SpawnerType.CHEST) {
             this.spawnChest();
+        } else  if (this.objectType === SpawnerType.MONSTER) {
+            this.spawnMonster();
         }
     }
 
@@ -34,6 +36,14 @@ class Spawner {
 
         this.objectsCreated.push(chest);
         this.addObject(chest.id, chest);
+    }
+
+    spawnMonster() {
+        const location = this.randomLocation();
+        const monster = new MonsterModel(location[0], location[1], randomNumber(8, 8), this.id);
+
+        this.objectsCreated.push(monster);
+        this.addObject(monster.id, monster);
     }
 
     randomLocation() {
